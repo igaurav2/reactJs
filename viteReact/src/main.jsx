@@ -5,30 +5,35 @@ import NewApp from './NewApp.jsx'
 
 function Newfunction(){  // converted into tree using parsing
     return (
-      <h2>new function</h2>
+      <h2>React</h2>
     )
 }
 
-const reactElement = {    //---> doesn't work as react rendor has different declarations of object
-  type : 'a',
-  props: {
-    href: 'https://google.com',
-    target: '_blank'
-  },
-  children: 'Click Me'
-}
+// const reactElement = {    //---> doesn't work as react rendor has different declarations of object
+//   type : 'a',
+//   props: {
+//     href: 'https://google.com',
+//     target: '_blank'
+//   },
+//   children: 'Click Me'
+// }
 
-const anotherElement = (
-  <a href='https://google.com' target='_blank'>Another Click Me</a>
+const libName = "React"      //-->>----------------------------------------------------------//
+                                                                                             //
+const preReactElement = React.createElement(  // pre defined syntax -> injected by babel(JavaScript transpiler)
+  'a',  // tag                                                                               //
+  {href: 'https://github.com/facebook/react/tree/main', target: '_blank'},  // object ==> attributes
+  'openSourceLibrary : ',  // text that appears                                              //
+  libName  // variable ==> evaluated expression ==> Gaurav <<--------------------------------//
+  // if(true) newUser ==> through error as it aspects evaluated expression
 )
 
-const preReactElement = React.createElement(  // pre defined syntax
-  'a',
-  {href: 'https://google.com', target: '_blank'},
-  'pre defined reactElement'
+const anotherElement = (
+  <a href='https://google.com' target='_blank'>Google</a>
 )
 
 createRoot(document.getElementById('root')).render(
+  <>
   <StrictMode>  {/* development specific for optimization */}
      <App />    {/* custom tag ==> we can render html element through js using react */}
     <NewApp />
@@ -36,7 +41,14 @@ createRoot(document.getElementById('root')).render(
     {/* preReactElement //---> doesn't work here */}
   </StrictMode>
 
-  // only runs when strict mode is not there
-  // anotherElement  
-  // preReactElement 
+
+
+  {/* --only runs when strict mode is not there */}
+  
+  {anotherElement} 
+  <Newfunction/> 
+  {preReactElement}
+  
+  </>
+  
 )

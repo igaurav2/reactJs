@@ -1,9 +1,10 @@
 import App from './App'
 
 function Gaurav(){      // if we meant to render a React component, start its name with an uppercase letter
+    const username = "Gaurav"   // evaluated expression
     return (
         <>   {/* fragment ==> used for wrapping of function*/}
-        <h3>Gaurav first function</h3>
+        <h3>{username} first function</h3> 
         <App/> 
         </>
     )
