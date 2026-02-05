@@ -1,10 +1,17 @@
-import React from "react";
+import { useState } from "react";
 
-function IndexCSS({ buttonName }) {
+function IndexCSS() {
+  const [color, setColor] = useState("Olive")
   return (
-    <h1 className="text-white text-xl font-bold text-center">
-      {buttonName}
-    </h1>
+    <div className="w-full h-screen duratioin-200"  // state 
+    style ={{backgroundColor: color}}  /* ----> to implement state
+                              --|--
+           ---------|-----------|----
+                    |           |
+      inlineCSS <---|           |---> variable injector (#000 : black ==> HexCode)              */
+    >
+      Nothing
+    </div>
   );
 }
 
